@@ -1,0 +1,16 @@
+html,
+body {
+    font-family: "Roboto", sans-serif !important;
+    font-size: 16px;
+    /* Porque es la medida que mas se usa entre los elementos del diseno */
+}
+
+@media (min-width: $tablet-width) {
+
+    html,
+    body {
+        font-family: "Roboto", sans-serif !important;
+        font-size: 24px;
+        /* Porque es la medida que mas se usa despues de la medida anterior entre los elementos del diseno */
+    }
+}
