@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+/* Importacion de archivo scss con las variables globales de colores */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap');
+@import "assets/css/variables.scss";
+@import "assets/css/colors.scss";
+@import "assets/css/basics.scss";
+@import "assets/css/textos.scss";
+@import "assets/css/buttons.scss";
+@import "assets/css/inputs.scss";
+@import "assets/css/general.scss";
+@import "assets/css/modals.scss";
+@import "assets/css/messages.scss";
+@import "assets/css/loading.scss";
