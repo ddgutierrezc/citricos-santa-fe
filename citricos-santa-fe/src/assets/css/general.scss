@@ -4,3 +4,26 @@ body {
   font-size: 16px;
   /* Porque es la medida que mas se usa entre los elementos del diseno */
 }
+
+.nav-link {
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+}
+
+.d-flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-controls {
+  width: 1.5rem; /* 40px */
+}
+
+@media (min-width: 768px) {
+  .carousel-controls {
+    width: 3.75rem; /* 60px */
+  }
+}
+

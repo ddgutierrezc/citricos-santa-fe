@@ -1,1 +1,65 @@
 <app-header></app-header>
+
+<main>
+    <section>
+        <div id="carouselIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="7000">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item" [ngClass]="{ active: i === 0 }" *ngFor="let image of images; let i = index">
+                    <img style="object-fit: cover;" [src]="image.url" class="d-block w-100" [alt]="image.title" />
+                </div>
+            </div>
+            <button class="carousel-control-prev opacity-100" type="button" data-bs-target="#carouselIndicators"
+                data-bs-slide="prev">
+                <span class="" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                        class="bi bi-arrow-left-circle-fill carousel-controls" viewBox="0 0 16 16">
+                        <path
+                            d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z" />
+                    </svg>
+                </span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next opacity-100" type="button" data-bs-target="#carouselIndicators"
+                data-bs-slide="next">
+                <span class="" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                        class="bi bi-arrow-right-circle-fill carousel-controls" viewBox="0 0 16 16">
+                        <path
+                            d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                    </svg>
+                </span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <section class="mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-4">
+                    <img class="h-500px" src="assets/imgs/vaso-de-jugo.png" alt="" loading="lazy" />
+                </div>
+                <div class="col-12 col-lg-8">
+                    <div class="border-left-gris-oscuro ps-4">
+                        <div class="d-flex align-items-center">
+                            <img style="height: 4.81331rem;" src="assets/imgs/citricos-color.svg" alt="" />
+                            <h1 class="titulo anaranjado ms-4">Nuestra <span class="d-block">Historia</span></h1>
+                        </div>
+
+                        <p class="parrafo" *ngFor="let parrafo of parrafos">
+                            {{parrafo}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
