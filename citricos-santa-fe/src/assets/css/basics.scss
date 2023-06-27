@@ -1,8 +1,19 @@
-.h-500px{
+.h-320px {
+  height: 320px;
+}
+
+.h-30px {
+  height: 30px;
+}
+
+@media (min-width: $sm-width) {
+  .h-sm-500px {
     height: 500px;
+  }
 }
 
-.border-left-gris-oscuro {
+@media (min-width: $lg-width) {
+  .border-left-lg-gris-oscuro {
     border-left: 1px solid $gris-oscuro;
+  }
 }
-

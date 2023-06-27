@@ -2,8 +2,7 @@
     <nav class="navbar navbar-expand-lg bg-verde fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="assets/imgs/logo/logo-citricos.svg"
-                    alt="Logo cítricos santa fe donde se muestra que la letra 'o' de cítricos es una naranja y la primera i de la palabra santa es una hoja de naranjo."
+                <img src="assets/imgs/logo/logo-citricos.svg" [alt]="textosAlternativosEnum.LOGO_CITRICOS"
                     class="d-inline-block align-text-top logo" />
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
@@ -15,15 +14,15 @@
                     <li class="nav-item me-lg-4 d-flex-center">
                         <a class="nav-link blanco" aria-current="page" href="#">Nosotros</a>
                     </li>
-                    <app-divider class="d-none d-lg-flex me-lg-4" />
+                    <hr class="d-none d-lg-flex me-lg-4 hr-solid">
                     <li class="nav-item me-lg-4 d-flex-center">
                         <a class="nav-link blanco" href="#">Contacto</a>
                     </li>
-                    <app-divider class="me-4 d-none d-lg-flex" />
+                    <hr class="me-4 d-none d-lg-flex hr-solid">
                     <li class="nav-item me-lg-4 d-flex-center">
                         <i class="fa-brands fa-facebook fa-2x blanco"></i>
                     </li>
-                    <app-divider class="d-none d-lg-flex" />
+                    <hr class="d-none d-lg-flex hr-solid">
                     <li class="nav-item ms-lg-4 mt-4 mt-lg-0 d-flex-center">
                         <i class="fa-brands fa-instagram fa-2x blanco"></i>
                     </li>

@@ -1,0 +1,17 @@
+.btn-basic {
+  height: auto;
+  white-space: break-spaces;
+  border-radius: 0;
+}
+
+.btn-formulario {
+  @extend .btn-basic;
+  padding: 0.5rem 1rem;
+}
+
+@media (min-width: $sm-width) {
+  .btn-formulario {
+    width: 12.5rem;
+    /* equivale a 200px */
+  }
+}

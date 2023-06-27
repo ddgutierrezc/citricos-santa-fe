@@ -1,0 +1,15 @@
+.input-base {
+  border: 1px solid $gris-oscuro;
+  border-radius: 0.25rem;
+  height: auto;
+}
+
+.input-form {
+  @extend .input-base;
+  height: 60px;
+}
+
+.input-textarea-form {
+  @extend .input-base;
+  height: 12.5rem; /* equivale a */
+}

@@ -11,6 +11,10 @@ body {
   text-transform: uppercase;
 }
 
+.footer {
+  padding: 2.125rem 7.5rem; /* 34px 120px */
+}
+
 .d-flex-center {
   display: flex;
   justify-content: center;
@@ -21,9 +25,36 @@ body {
   width: 1.5rem; /* 40px */
 }
 
-@media (min-width: 768px) {
+@media (min-width: $md-width) {
   .carousel-controls {
     width: 3.75rem; /* 60px */
   }
 }
 
+.hr-solid {
+  border-left: 3px solid var(--blanco);
+  height: 35px;
+  opacity: 1;
+}
+
+.hr-solid-black-15px {
+  @extend .hr-solid;
+  border-left: 1px solid var(--negro);
+  height: 15px;
+}
+
+.bg-base {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bg-nosotros {
+  @extend .bg-base;
+  background-image: url("/assets/imgs/ondas-de-color-gris.jpg");
+}
+
+.bg-contactenos {
+  @extend .bg-base;
+  background-image: url("/assets/imgs/un-grupo-de-naranjas.jpg");
+}

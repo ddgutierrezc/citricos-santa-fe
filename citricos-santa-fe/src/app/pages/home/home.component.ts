@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from 'src/app/components/header/header.component';
+import { TextosAlternativosEnum } from 'src/app/common/enums/textos-alternativos.enum';
 
 @Component({
   selector: 'app-home',
@@ -31,4 +32,8 @@ export class HomeComponent {
     'Gracias a nuestro enfoque como productores y vendedores directos, logramos establecernos con éxito en la industria. Este enfoque nos brindó la ventaja de ofrecer mejores precios a nuestros clientes, a la vez que mantuvimos altos estándares de calidad y un servicio excepcional.',
     'Hoy en día, nos enorgullece decir que nuestros productos se comercializan en todos los mercados nacionales, así como en diversas cadenas de supermercados. A pesar de nuestro crecimiento, hemos mantenido nuestra esencia como una pequeña empresa familiar, lo que nos permite mantener un trato cercano y personalizado con nuestros clientes.',
   ];
+
+  get textosAlternativosEnum(): typeof TextosAlternativosEnum {
+    return TextosAlternativosEnum;
+  }
 }
