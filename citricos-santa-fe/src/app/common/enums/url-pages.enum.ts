@@ -6,5 +6,6 @@
  * @since 27/06/2023
  */
 export enum URLPagesEnum {
+  RAIZ = '',
   HOME = 'home',
 }

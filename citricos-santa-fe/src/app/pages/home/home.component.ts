@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from 'src/app/components/header/header.component';
 import { TextosAlternativosEnum } from 'src/app/common/enums/textos-alternativos.enum';
-import { EmailService } from 'src/app/services/email-service/email.service';
+
 import {
   FormBuilder,
   FormGroup,
@@ -19,9 +19,9 @@ import { ModalsService } from 'src/app/services/modals-service/modals.service';
 import { ModalMensajesEnum } from 'src/app/common/enums/modal-mensajes.enum';
 import { MensajesValidacionFormContactoEnum } from 'src/app/common/enums/mensajes-validacion-form-contacto.enum';
 import { UtilsForms } from 'src/app/common/utils/utils-forms';
-import { LoadingService } from 'src/app/services/loading-service/loading.service';
-import { LoadingMensajesEnum } from 'src/app/common/enums/loading-mensajes.enum';
 import { IdsSeccionesHomeEnum } from 'src/app/common/enums/ids-secciones-home.enum';
+import { ModalTypes } from 'src/app/common/enums/modal-types.enum';
+import { HomeController } from './home.controller';
 
 @Component({
   selector: 'app-home',
@@ -35,12 +35,12 @@ import { IdsSeccionesHomeEnum } from 'src/app/common/enums/ids-secciones-home.en
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
+  providers: [HomeController],
 })
 export class HomeComponent implements OnInit {
   constructor(
-    private readonly emailService: EmailService,
     private readonly modalsService: ModalsService,
-    private readonly loadingService: LoadingService
+    private readonly pageController: HomeController
   ) {}
 
   formContacto: FormGroup;
@@ -116,21 +116,23 @@ export class HomeComponent implements OnInit {
     const formularioContacto: IFormularioContacto = this.formContacto
       .value as IFormularioContacto;
 
-    const modalLoading = this.loadingService.showLoading(
-      LoadingMensajesEnum.ENVIANDO_CORREO
-    );
-
-    const responseEmailSended = await this.emailService.sendEmail(
+    const responseEmailSended = await this.pageController.sendEmail(
       formularioContacto
     );
 
-    this.loadingService.closeModal(modalLoading);
-
     if (responseEmailSended) {
-      await this.modalsService.mostrarModalConfirmacionAccionRealizada(
-        ModalMensajesEnum.CORREO_ENVIADO_EXITO
+      await this.modalsService.mostrarModalResultadoAccion(
+        ModalTypes.SUCCESS,
+        ModalMensajesEnum.CORREO_ENVIADO_EXITO,
+        ModalMensajesEnum.GRACIAS_POR_CONTACTARNOS
       );
       this.formContacto.reset();
+    } else {
+      await this.modalsService.mostrarModalResultadoAccion(
+        ModalTypes.ERROR,
+        ModalMensajesEnum.CORREO_ENVIADO_ERROR,
+        ModalMensajesEnum.SUCEDIO_UN_ERROR_AL_ENVIAR_EL_CORREO
+      );
     }
   }
 }

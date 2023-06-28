@@ -1,0 +1,34 @@
+<div class="container pb-5 pt-5 p-3 p-sm-5">
+  <div class="row">
+    <div class="col-12 text-center mb-5">
+      <i
+        *ngIf="tipo === modalTypes.SUCCESS"
+        class="fa-regular fa-circle-check fa-10x verde"
+      ></i>
+      <i
+        *ngIf="tipo === modalTypes.ERROR"
+        class="fa-solid fa-circle-exclamation fa-10x gris-oscuro"
+      ></i>
+    </div>
+
+    <div class="col-12 text-center mb-3">
+      <h1 class="titulo">{{ titulo }}</h1>
+    </div>
+
+    <div class="col-12 text-center">
+      <p class="parrafo">
+        {{ mensaje }}
+      </p>
+    </div>
+
+    <div class="text-center">
+      <button
+        (click)="closeModal()"
+        type="submit"
+        class="btn btn-anaranjado-formulario"
+      >
+        Aceptar
+      </button>
+    </div>
+  </div>
+</div>

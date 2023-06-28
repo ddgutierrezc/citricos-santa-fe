@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ModalRolesEnum } from 'src/app/common/enums/modal-roles.enum';
+import { ModalTypes } from 'src/app/common/enums/modal-types.enum';
 import { ModalResponse } from 'src/app/common/interface/modal-response.interface';
-import { ModalConfirmacionAccionExitosaComponent } from 'src/app/components/modals/modal-envio-correo-exito/modal-confirmacion-accion-exitosa.component';
+import { ModalConfirmacionAccionExitosaComponent } from 'src/app/components/modals/modal-confirmacion-accion-exitosa/modal-confirmacion-accion-exitosa.component';
 
 @Injectable({
   providedIn: 'root',
@@ -20,8 +21,10 @@ export class ModalsService {
    * @version 1.0
    * @since 27/06/2023
    */
-  async mostrarModalConfirmacionAccionRealizada(
-    titulo: string
+  async mostrarModalResultadoAccion(
+    tipo: ModalTypes,
+    titulo: string,
+    mensaje: string
   ): Promise<ModalResponse> {
     const modalRef: NgbModalRef = this.modalService.open(
       ModalConfirmacionAccionExitosaComponent,
@@ -33,6 +36,8 @@ export class ModalsService {
     );
 
     modalRef.componentInstance.titulo = titulo;
+    modalRef.componentInstance.mensaje = mensaje;
+    modalRef.componentInstance.tipo = tipo;
 
     const result = await modalRef.result;
     return { data: result, role: ModalRolesEnum.CONFIRMED };

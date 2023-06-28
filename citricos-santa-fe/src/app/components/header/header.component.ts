@@ -4,11 +4,12 @@ import { CommonModule, ViewportScroller } from '@angular/common';
 import { TextosAlternativosEnum } from 'src/app/common/enums/textos-alternativos.enum';
 import { LinksRedesSocialesEnum } from 'src/app/common/enums/links-redes-sociales.enum';
 import { IdsSeccionesHomeEnum } from 'src/app/common/enums/ids-secciones-home.enum';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
