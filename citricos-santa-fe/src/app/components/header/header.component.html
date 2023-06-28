@@ -15,16 +15,18 @@
                         <a class="nav-link blanco" aria-current="page" href="#">Nosotros</a>
                     </li>
                     <hr class="d-none d-lg-flex me-lg-4 hr-solid">
-                    <li class="nav-item me-lg-4 d-flex-center">
+                    <li class="nav-item mb-3 mb-lg-0 me-lg-4 d-flex-center">
                         <a class="nav-link blanco" href="#">Contacto</a>
                     </li>
                     <hr class="me-4 d-none d-lg-flex hr-solid">
-                    <li class="nav-item me-lg-4 d-flex-center">
-                        <i class="fa-brands fa-facebook fa-2x blanco"></i>
+                    <li class="nav-item mb-3 mb-lg-0 me-lg-4 d-flex-center">
+                        <a [href]="redesSocialesEnum.FACEBOOK" target="_blank"><i
+                                class="fa-brands fa-facebook fa-2x blanco"></i></a>
                     </li>
                     <hr class="d-none d-lg-flex hr-solid">
-                    <li class="nav-item ms-lg-4 mt-4 mt-lg-0 d-flex-center">
-                        <i class="fa-brands fa-instagram fa-2x blanco"></i>
+                    <li class="nav-item ms-lg-4 mb-3 mb-lg-0 d-flex-center">
+                        <a [href]="redesSocialesEnum.INSTAGRAM" target="_blank"><i
+                                class="fa-brands fa-instagram fa-2x blanco"></i></a>
                     </li>
                 </ul>
             </div>

@@ -14,11 +14,18 @@ import { EmailJsParamsEnum } from 'src/app/common/enums/emailjs-params.enum';
 import { IFormularioContacto } from 'src/app/common/interface/formulario-contacto.interface';
 import { ICarousel } from 'src/app/common/interface/carousel.interface';
 import { TextosAlternativosCarouselEnum } from 'src/app/common/enums/textos-alternativos-carousels.enum';
+import { FooterComponent } from 'src/app/components/footer/footer.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, FormsModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    HeaderComponent,
+    FooterComponent,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
