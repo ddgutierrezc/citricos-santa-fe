@@ -48,17 +48,17 @@ export class HomeComponent implements OnInit {
   images: ICarousel[] = [
     {
       title: 'Image 1',
-      url: 'assets/imgs/arboles-de-naranja.jpg',
+      url: 'assets/imgs/arboles-de-naranja.webp',
       alt: TextosAlternativosCarouselEnum.ARBOLES_DE_NARANJA,
     },
     {
       title: 'Image 1',
-      url: 'assets/imgs/naranja-cortada-a-la-mitad.jpg',
+      url: 'assets/imgs/naranja-cortada-a-la-mitad.webp',
       alt: TextosAlternativosCarouselEnum.NARANJA_CORTADA_A_LA_MITAD,
     },
     {
       title: 'Image 1',
-      url: 'assets/imgs/persona-sirviendo-un-vaso-de-jugo.jpg',
+      url: 'assets/imgs/persona-sirviendo-un-vaso-de-jugo.webp',
       alt: TextosAlternativosCarouselEnum.PERSONA_SIRVIENDO_UN_VASO_DE_JUGO,
     },
   ];
