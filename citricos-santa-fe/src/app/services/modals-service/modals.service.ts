@@ -13,7 +13,7 @@ export class ModalsService {
   /**
    * Muestra un modal indicando que se ha realizado una acción.
    *
-   * @param {string} mensaje - El mensaje a mostrar en el modal.
+   * @param {string} titulo - El mensaje a mostrar en el modal.
    * @returns {Promise<ModalResponse>} - Una promesa que se resuelve con los datos y el rol del modal.
    *
    * @author dgutierrez
@@ -21,7 +21,7 @@ export class ModalsService {
    * @since 27/06/2023
    */
   async mostrarModalConfirmacionAccionRealizada(
-    mensaje: string
+    titulo: string
   ): Promise<ModalResponse> {
     const modalRef: NgbModalRef = this.modalService.open(
       ModalConfirmacionAccionExitosaComponent,
@@ -32,7 +32,7 @@ export class ModalsService {
       }
     );
 
-    modalRef.componentInstance.titulo = mensaje;
+    modalRef.componentInstance.titulo = titulo;
 
     const result = await modalRef.result;
     return { data: result, role: ModalRolesEnum.CONFIRMED };

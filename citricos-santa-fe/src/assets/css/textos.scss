@@ -15,6 +15,12 @@
   font-family: "Roboto", sans-serif;
 }
 
+.alert{
+  font-size: 2rem; /* equivale a 16px */
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+}
+
 @media (min-width: $sm-width) {
   .titulo {
     font-size: 2.875rem; /* equivale a 46px */

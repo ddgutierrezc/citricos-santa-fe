@@ -16,7 +16,7 @@ export class LoadingService {
    * @version 1.0
    * @since 27/06/2023
    */
-  showLoading(): NgbModalRef {
+  showLoading(mensaje: string): NgbModalRef {
     const loadingRef: NgbModalRef = this.modalService.open(
       ModalLoadingComponent,
       {
@@ -25,6 +25,8 @@ export class LoadingService {
         backdrop: 'static',
       }
     );
+
+    loadingRef.componentInstance.mensaje = mensaje;
 
     return loadingRef;
   }

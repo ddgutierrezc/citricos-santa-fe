@@ -19,6 +19,8 @@ import { ModalsService } from 'src/app/services/modals-service/modals.service';
 import { ModalMensajesEnum } from 'src/app/common/enums/modal-mensajes.enum';
 import { MensajesValidacionFormContactoEnum } from 'src/app/common/enums/mensajes-validacion-form-contacto.enum';
 import { UtilsForms } from 'src/app/common/utils/utils-forms';
+import { LoadingService } from 'src/app/services/loading-service/loading.service';
+import { LoadingMensajesEnum } from 'src/app/common/enums/loading-mensajes.enum';
 
 @Component({
   selector: 'app-home',
@@ -36,7 +38,8 @@ import { UtilsForms } from 'src/app/common/utils/utils-forms';
 export class HomeComponent implements OnInit {
   constructor(
     private readonly emailService: EmailService,
-    private readonly modalsService: ModalsService
+    private readonly modalsService: ModalsService,
+    private readonly loadingService: LoadingService
   ) {}
 
   formContacto: FormGroup;
@@ -88,8 +91,8 @@ export class HomeComponent implements OnInit {
   }
 
   /**
-   * 
-   * @returns 
+   *
+   * @returns
    */
   async submitForm() {
     if (this.formContacto.invalid) {
@@ -99,9 +102,16 @@ export class HomeComponent implements OnInit {
 
     const formularioContacto: IFormularioContacto = this.formContacto
       .value as IFormularioContacto;
+
+    const modalLoading = this.loadingService.showLoading(
+      LoadingMensajesEnum.ENVIANDO_CORREO
+    );
+
     const responseEmailSended = await this.emailService.sendEmail(
       formularioContacto
     );
+
+    this.loadingService.closeModal(modalLoading);
 
     if (responseEmailSended) {
       await this.modalsService.mostrarModalConfirmacionAccionRealizada(
