@@ -13,10 +13,10 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item" [ngClass]="{ active: i === 0 }" *ngFor="let image of images; let i = index">
-                    <img [src]="image.url" class="d-block w-100" [alt]="image.title" />
+                    <img [src]="image.url" class="d-block w-100" [alt]="image.alt" />
                 </div>
             </div>
-            <button class="carousel-control-prev opacity-100" type="button" data-bs-target="#carouselIndicators"
+            <button class="carousel-control-prev opacity-50" type="button" data-bs-target="#carouselIndicators"
                 data-bs-slide="prev">
                 <span class="" aria-hidden="true">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
@@ -27,7 +27,7 @@
                 </span>
                 <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next opacity-100" type="button" data-bs-target="#carouselIndicators"
+            <button class="carousel-control-next opacity-50" type="button" data-bs-target="#carouselIndicators"
                 data-bs-slide="next">
                 <span class="" aria-hidden="true">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
@@ -49,16 +49,16 @@
                         [alt]="textosAlternativosEnum.VASO_JUGO_NARANJA" loading="lazy" />
                 </div>
                 <div class="col-12 col-lg-8">
-                    <div class="border-left-lg-gris-oscuro ps-4">
-                        <div class="d-lg-flex align-items-center text-center">
+                    <div class="border-left-lg-gris-oscuro ps-lg-4">
+                        <div class="d-lg-flex text-center mb-3">
                             <img class="mt-3 mt-lg-0 img-fluid" style="height: 4.81331rem"
                                 src="assets/imgs/citricos-color.svg" [alt]="textosAlternativosEnum.LOGO_CITRICOS" />
-                            <h1 class="titulo anaranjado mt-3 mt-lg-0 ms-lg-4">
+                            <h1 class="titulo anaranjado mt-3 mt-lg-0 ms-lg-4 line-height-2-5rem">
                                 Nuestra <span class="d-lg-block">Historia</span>
                             </h1>
                         </div>
 
-                        <p class="parrafo" *ngFor="let parrafo of parrafos">
+                        <p class="parrafo " *ngFor="let parrafo of parrafos">
                             {{ parrafo }}
                         </p>
                     </div>
@@ -68,7 +68,7 @@
     </section>
 
     <section class="bg-contactenos">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 <div class="col-12 col-md-6 offset-md-6 mt-5">
                     <h2 class="titulo text-center">Contáctenos</h2>
@@ -78,22 +78,24 @@
                         <span class="ms-3 d-block d-sm-flex">Tel : 8820-1522</span>
                     </div>
 
-                    <form class="p-5">
+                    <form [formGroup]="formContacto" class="mb-5" (ngSubmit)="submitForm()">
                         <div class="mb-3">
                             <label for="nombrePersona" class="form-label texto-base">Nombre</label>
-                            <input type="text" class="form-control input-form" id="nombrePersona"
-                                aria-describedby="nombre persona" />
+                            <input required type="text" class="form-control input-form" id="nombrePersona"
+                                aria-describedby="nombre persona" formControlName="from_name" />
                         </div>
                         <div class="mb-3">
                             <label for="inputEmail" class="form-label texto-base">Correo electrónico</label>
-                            <input type="email" class="form-control input-form" id="inputEmail" />
+                            <input required type="email" class="form-control input-form" id="inputEmail"
+                                formControlName="email" />
                         </div>
                         <div class="mb-3">
                             <label for="inputMensaje" class="form-label texto-base">Mensaje</label>
-                            <textarea class="form-control input-textarea-form" id="inputMensaje" rows="3"></textarea>
+                            <textarea required class="form-control input-textarea-form" id="inputMensaje" rows="3"
+                                formControlName="message"></textarea>
                         </div>
                         <div class="text-end">
-                            <button type="submit" class="btn btn-formulario bg-anaranjado blanco">
+                            <button type="submit" class="btn btn-anaranjado-formulario">
                                 Enviar
                             </button>
                         </div>
@@ -104,20 +106,20 @@
     </section>
 </main>
 
-<footer class="container-fluid bg-gris-oscuro ps-5 pe-5 footer">
-    <div class="row">
-        <div class="col-lg-10 text-center text-lg-start mb-4 mb-lg-0">
-            <i class="fa-regular fa-copyright blanco"></i>
-            <span class="ms-3 texto-base blanco">Desarrollado por: Web developers Beetles 7042 4770</span>
-        </div>
+<footer class="bg-gris-oscuro footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 text-center text-lg-start mb-4 mb-lg-0">
+                <i class="fa-regular fa-copyright blanco"></i>
+                <span class="ms-1 ms-lg-3 texto-base blanco">Desarrollado por: Web developers Beetles 7042 4770</span>
+            </div>
 
-        <div class="col-lg-2 d-flex-center">
-            <img src="assets/imgs/citricos-blanco.svg" [alt]="textosAlternativosEnum.LOGO_CITRICOS"
-                class="img-fluid h-30px">
-            <i class="fa-brands fa-facebook ms-4 fa-2x blanco"></i>
-            <i class="fa-brands fa-instagram ms-4 fa-2x blanco"></i>
+            <div class="col-lg-2 d-flex-center">
+                <img src="assets/imgs/citricos-blanco.svg" [alt]="textosAlternativosEnum.LOGO_CITRICOS"
+                    class="img-fluid h-30px">
+                <i class="fa-brands fa-facebook ms-4 fa-2x blanco"></i>
+                <i class="fa-brands fa-instagram ms-4 fa-2x blanco"></i>
+            </div>
         </div>
-
     </div>
-
 </footer>

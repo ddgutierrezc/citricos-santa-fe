@@ -4,13 +4,19 @@
   border-radius: 0;
 }
 
-.btn-formulario {
+.btn-anaranjado-formulario {
   @extend .btn-basic;
   padding: 0.5rem 1rem;
+  background-color: $anaranjado;
+  color: $blanco;
+  &:hover {
+    background-color: $anaranjado;
+    color: $blanco;
+  }
 }
 
 @media (min-width: $sm-width) {
-  .btn-formulario {
+  .btn-anaranjado-formulario {
     width: 12.5rem;
     /* equivale a 200px */
   }
