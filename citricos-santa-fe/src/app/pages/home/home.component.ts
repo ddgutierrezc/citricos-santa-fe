@@ -21,6 +21,7 @@ import { MensajesValidacionFormContactoEnum } from 'src/app/common/enums/mensaje
 import { UtilsForms } from 'src/app/common/utils/utils-forms';
 import { LoadingService } from 'src/app/services/loading-service/loading.service';
 import { LoadingMensajesEnum } from 'src/app/common/enums/loading-mensajes.enum';
+import { IdsSeccionesHomeEnum } from 'src/app/common/enums/ids-secciones-home.enum';
 
 @Component({
   selector: 'app-home',
@@ -79,6 +80,18 @@ export class HomeComponent implements OnInit {
 
   get mensajesValidacionFormContactoEnum(): typeof MensajesValidacionFormContactoEnum {
     return MensajesValidacionFormContactoEnum;
+  }
+
+  /**
+   * Obtiene el enumerado con los ids de las secciones de la home.
+   *
+   * @returns {IdsSeccionesHomeEnum} Enumerado con los ids de las secciones de la home.
+   * @author dgutierrez
+   * @version 1.0
+   * @since 27/06/2023
+   */
+  get idsSeccionesHomeEnum(): typeof IdsSeccionesHomeEnum {
+    return IdsSeccionesHomeEnum;
   }
 
   private crearFormularioContacto() {
