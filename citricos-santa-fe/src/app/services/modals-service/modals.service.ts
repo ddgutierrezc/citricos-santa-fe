@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ModalRolesEnum } from 'src/app/common/enums/modal-roles.enum';
 import { ModalResponse } from 'src/app/common/interface/modal-response.interface';
-import { ModalConfirmacionAccionExitosaComponent } from 'src/app/components/modal-envio-correo-exito/modal-confirmacion-accion-exitosa.component';
+import { ModalConfirmacionAccionExitosaComponent } from 'src/app/components/modals/modal-envio-correo-exito/modal-confirmacion-accion-exitosa.component';
 
 @Injectable({
   providedIn: 'root',
