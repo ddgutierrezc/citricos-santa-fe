@@ -58,3 +58,19 @@ body {
   @extend .bg-base;
   background-image: url("/assets/imgs/un-grupo-de-naranjas.jpg");
 }
+
+.fa-instagram {
+  transition:all .3s ease-in-out;
+  &:hover {
+    color: $negro;
+    transition:all .3s ease-in-out;
+  }
+}
+
+.fa-facebook {
+  transition:all .3s ease-in-out;
+  &:hover {
+    color: $negro;
+    transition:all .3s ease-in-out;
+  }
+}
