@@ -8,7 +8,7 @@ import { ModalConfirmacionAccionExitosaComponent } from 'src/app/components/moda
   providedIn: 'root',
 })
 export class ModalsService {
-  constructor(private modalService: NgbModal) {}
+  constructor(private readonly modalService: NgbModal) {}
 
   /**
    * Muestra un modal indicando que se ha realizado una acción.
@@ -20,7 +20,7 @@ export class ModalsService {
    * @version 1.0
    * @since 27/06/2023
    */
-  public async mostrarModalConfirmacionAccionRealizada(
+  async mostrarModalConfirmacionAccionRealizada(
     mensaje: string
   ): Promise<ModalResponse> {
     const modalRef: NgbModalRef = this.modalService.open(
