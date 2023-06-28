@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from 'src/app/components/header/header.component';
 import { TextosAlternativosEnum } from 'src/app/common/enums/textos-alternativos.enum';
-import { EmailService } from 'src/app/services/email/email.service';
+import { EmailService } from 'src/app/services/email-service/email.service';
 import {
   FormBuilder,
   FormGroup,
@@ -15,6 +15,8 @@ import { IFormularioContacto } from 'src/app/common/interface/formulario-contact
 import { ICarousel } from 'src/app/common/interface/carousel.interface';
 import { TextosAlternativosCarouselEnum } from 'src/app/common/enums/textos-alternativos-carousels.enum';
 import { FooterComponent } from 'src/app/components/footer/footer.component';
+import { ModalsService } from 'src/app/services/modals-service/modals.service';
+import { ModalMensajesEnum } from 'src/app/common/enums/modal-mensajes.enum';
 
 @Component({
   selector: 'app-home',
@@ -30,7 +32,10 @@ import { FooterComponent } from 'src/app/components/footer/footer.component';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  constructor(private readonly emailService: EmailService) {}
+  constructor(
+    private readonly emailService: EmailService,
+    private readonly modalsService: ModalsService
+  ) {}
 
   formContacto: FormGroup;
 
@@ -59,7 +64,7 @@ export class HomeComponent implements OnInit {
     'Hoy en día, nos enorgullece decir que nuestros productos se comercializan en todos los mercados nacionales, así como en diversas cadenas de supermercados. A pesar de nuestro crecimiento, hemos mantenido nuestra esencia como una pequeña empresa familiar, lo que nos permite mantener un trato cercano y personalizado con nuestros clientes.',
   ];
 
-  ngOnInit(): void {
+  async ngOnInit() {
     this.crearFormularioContacto();
   }
 
@@ -89,6 +94,9 @@ export class HomeComponent implements OnInit {
     );
 
     if (responseEmailSended) {
+      await this.modalsService.mostrarModalConfirmacionAccionRealizada(
+        ModalMensajesEnum.CORREO_ENVIADO_EXITO
+      );
       this.formContacto.reset();
     }
   }
