@@ -17,6 +17,8 @@ import { TextosAlternativosCarouselEnum } from 'src/app/common/enums/textos-alte
 import { FooterComponent } from 'src/app/components/footer/footer.component';
 import { ModalsService } from 'src/app/services/modals-service/modals.service';
 import { ModalMensajesEnum } from 'src/app/common/enums/modal-mensajes.enum';
+import { MensajesValidacionFormContactoEnum } from 'src/app/common/enums/mensajes-validacion-form-contacto.enum';
+import { UtilsForms } from 'src/app/common/utils/utils-forms';
 
 @Component({
   selector: 'app-home',
@@ -72,6 +74,10 @@ export class HomeComponent implements OnInit {
     return TextosAlternativosEnum;
   }
 
+  get mensajesValidacionFormContactoEnum(): typeof MensajesValidacionFormContactoEnum {
+    return MensajesValidacionFormContactoEnum;
+  }
+
   private crearFormularioContacto() {
     this.formContacto = new FormBuilder().group({
       from_name: ['', Validators.required],
@@ -81,9 +87,13 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  /**
+   * 
+   * @returns 
+   */
   async submitForm() {
     if (this.formContacto.invalid) {
-      console.debug('Formulario inválido');
+      UtilsForms.markFormGroupAllAsTouchedAndDirty(this.formContacto);
       return;
     }
 
