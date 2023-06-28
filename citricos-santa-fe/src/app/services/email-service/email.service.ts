@@ -25,11 +25,9 @@ export class EmailService {
     );
 
     if (emailSendedResponse.status === 200) {
-      console.log('Email sended successfully');
       return true;
     }
 
-    console.log('Email sended failed');
     return false;
   }
 }
