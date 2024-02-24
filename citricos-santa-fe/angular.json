@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "citricos-santa-fe:build:production"
+              "buildTarget": "citricos-santa-fe:build:production"
             },
             "development": {
-              "browserTarget": "citricos-santa-fe:build:development"
+              "buildTarget": "citricos-santa-fe:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "citricos-santa-fe:build"
+            "buildTarget": "citricos-santa-fe:build"
           }
         },
         "test": {
