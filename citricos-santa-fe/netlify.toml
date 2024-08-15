@@ -3,10 +3,5 @@
   to = "/index.html"
   status = 200
 
-# netlify.toml
 [build]
   command = "ng build"
-  publish = "dist/citricos-santa-fe"
-  # Desactiva el plugin
-  # plugins = ["@netlify/angular-runtime"]
-
