@@ -31,13 +31,11 @@
         ></button>
       </div>
       <div class="carousel-inner">
-        <div
-          class="carousel-item"
-          [ngClass]="{ active: i === 0 }"
-          *ngFor="let image of images; let i = index"
-        >
+        @for (image of images; track $index) {
+        <div class="carousel-item" [ngClass]="{ active: $index === 0 }">
           <img [src]="image.url" class="d-block w-100" [alt]="image.alt" />
         </div>
+        }
       </div>
       <button
         class="carousel-control-prev opacity-50"
@@ -108,10 +106,11 @@
                 Nuestra <span class="d-lg-block">Historia</span>
               </h1>
             </div>
-
-            <p class="parrafo" *ngFor="let parrafo of parrafos">
+            @for (parrafo of parrafos; track $index) {
+            <p class="parrafo">
               {{ parrafo }}
             </p>
+            }
           </div>
         </div>
       </div>
