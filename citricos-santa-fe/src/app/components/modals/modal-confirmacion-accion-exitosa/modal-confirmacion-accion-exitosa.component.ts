@@ -4,11 +4,10 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalTypes } from 'src/app/common/enums/modal-types.enum';
 
 @Component({
-  selector: 'app-modal-envio-correo-exito',
-  templateUrl: './modal-confirmacion-accion-exitosa.component.html',
-  styleUrls: ['./modal-confirmacion-accion-exitosa.component.scss'],
-  standalone: true,
-  imports: [CommonModule],
+    selector: 'app-modal-envio-correo-exito',
+    templateUrl: './modal-confirmacion-accion-exitosa.component.html',
+    styleUrls: ['./modal-confirmacion-accion-exitosa.component.scss'],
+    imports: [CommonModule]
 })
 export class ModalConfirmacionAccionExitosaComponent {
   titulo: string;

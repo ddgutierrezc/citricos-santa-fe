@@ -5,8 +5,7 @@ import { TextosAlternativosEnum } from 'src/app/common/enums/textos-alternativos
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss'],
-  standalone: true,
+  styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
   /**

@@ -24,18 +24,17 @@ import { ModalTypes } from 'src/app/common/enums/modal-types.enum';
 import { HomeController } from './home.controller';
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [
-    CommonModule,
-    HeaderComponent,
-    FooterComponent,
-    FormsModule,
-    ReactiveFormsModule,
-  ],
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
-  providers: [HomeController],
+    selector: 'app-home',
+    imports: [
+        CommonModule,
+        HeaderComponent,
+        FooterComponent,
+        FormsModule,
+        ReactiveFormsModule,
+    ],
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.scss'],
+    providers: [HomeController]
 })
 export class HomeComponent implements OnInit {
   constructor(
